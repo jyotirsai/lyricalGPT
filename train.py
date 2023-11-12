@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from pathlib import Path
+from tqdm import tqdm
 
 from dataset import build_dataloader_and_tokenizers
 from model import GPTModel
