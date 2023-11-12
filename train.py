@@ -7,10 +7,9 @@ from dataset import build_dataloader_and_tokenizers
 from model import GPTModel
 
 def get_weights_file_path(config, epochs: str):
-  model_folder = config['model_folder']
   model_basename = config['model_basename']
   model_filename = f"{model_basename}{epochs}.pt"
-  return str(Path('.') / model_folder / model_filename)
+  return str(Path('.') / model_filename)
 
 def train_model(config):
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

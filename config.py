@@ -14,7 +14,6 @@ def get_config():
         'dropout': 0.1,
         'lr': 3e-4,
         'preload': None,
-        'model_folder': 'lyricalGPT',
         'model_basename': 'lyricalGPT',
         'tokenizer_file': 'tokenizer_{0}.json',
     }
