@@ -11,6 +11,18 @@ def get_weights_file_path(config, epochs: str):
   model_filename = f"{model_basename}{epochs}.pt"
   return str(Path('.') / model_filename)
 
+def estimate_val_loss(model, val, tokenizer, device):
+  model.eval()
+  running_vloss = 0
+
+  with torch.no_grad():
+    for i,(xb, yb) in enumerate(val):
+      logits, loss = model(xb.to(device), yb.to(device))
+      running_vloss += loss
+
+  avg_vloss = running_vloss / (i + 1)
+  print('LOSS valid {}'.format(avg_vloss))
+
 def train_model(config):
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
   print(f'Using device {device}')
@@ -42,6 +54,8 @@ def train_model(config):
       optimizer.step()
       global_step += 1
     
+    estimate_val_loss(model, val, tokenizer, device)
+    print("LOSS train: ", loss)
     # Save the model
     model_filename = get_weights_file_path(config, f'{epoch:02d}')
     torch.save({
