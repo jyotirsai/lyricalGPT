@@ -36,8 +36,6 @@ def train_model(config):
     batch_iterator = tqdm(train, desc=f'Processing epoch {epoch:02d}')
     for (xb, yb) in batch_iterator:
       logits, loss = model(xb.to(device), yb.to(device))
-
-      print("loss: ", loss)
       
       optimizer.zero_grad()
       loss.backward()
