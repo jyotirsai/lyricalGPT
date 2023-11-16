@@ -19,7 +19,7 @@ def generate(config, max_new_tokens: int = 500):
 
   model.eval()
 
-  inputs = torch.zeros((config['context_size'], config['context_size']), dtype=torch.long, device=device)
+  inputs = torch.randint(100,1000,(config['context_size'], config['context_size']), dtype=torch.long, device=device)
   with torch.no_grad():
     for _ in range(max_new_tokens):
       inputs_cropped = inputs[:, -config['context_size']:]
@@ -29,5 +29,5 @@ def generate(config, max_new_tokens: int = 500):
 
       inputs_next = torch.multinomial(probs, 1)
       inputs = torch.cat((inputs, inputs_next), dim=1)
-
-  print(tokenizer.decode(inputs.squeeze()[0].tolist()))
+  
+  return tokenizer.decode(inputs.squeeze()[0].tolist())
