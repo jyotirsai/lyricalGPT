@@ -15,11 +15,11 @@ of the model as well as some training info.
 
 | Parameter      | Value |
 | -------------- | ----- |
-| learning rate  | 3e-4  |
+| Learning Rate  | 3e-4  |
 | Optimizer      | Adam  |
 | Batch size     | 256   |
 | Embedding size | 512   |
-| dropout        | 0.1   |
+| Dropout        | 0.1   |
 | Heads          | 6     |
 | Context size   | 64    |
 
@@ -30,6 +30,8 @@ for 20 epochs due to a lack of computing power. Training for more epochs along w
 the results signficantly. The dataset is a 5 GB English song lyrics dataset from <a href="https://www.kaggle.com/datasets/razauhaq/english-songs-lyrics">Kaggle</a>. To reduce the compute time, only the pop songs from 2015 onwards was chosen which
 resulted in about ~450,000 song lyrics (~500 MB). Including all of the pop songs, and testing out other genres, could also
 help improve results.
+
+## Requirements
 
 ## References
 
