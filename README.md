@@ -13,14 +13,15 @@ The model consists of an input and positional embedding followed by 6 decoder bl
 on top of one another with a final linear layer with softmax. The table includes other parameters
 of the model as well as some training info.
 
-| Parameter | Value |
-| learning rate | 3e-4 |
-| Optimizer | Adam |
-| Batch size | 256 |
-| Embedding size | 512 |
-| dropout | 0.1 |
-| Heads | 6 |
-| Context size | 64 |
+| Parameter      | Value |
+| -------------- | ----- |
+| learning rate  | 3e-4  |
+| Optimizer      | Adam  |
+| Batch size     | 256   |
+| Embedding size | 512   |
+| dropout        | 0.1   |
+| Heads          | 6     |
+| Context size   | 64    |
 
 ## Potential Improvements
 
