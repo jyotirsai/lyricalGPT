@@ -63,10 +63,12 @@ help improve results.
 
 ## Requirements
 
-pandas==1.5.2
-tokenizers==0.15.0
-torch==2.1.0
-tqdm==4.64.0
+<ul>
+    <li>pandas==1.5.2</li>
+    <li>tokenizers==0.15.0</li>
+    <li>torch==2.1.0</li>
+    <li>tqdm==4.64.0</li>
+</ul>
 
 ## References
 
