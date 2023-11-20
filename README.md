@@ -23,6 +23,36 @@ of the model as well as some training info.
 | Heads          | 6     |
 | Context size   | 64    |
 
+## Inference
+
+To generate lyrics, simply pass the config dictionary to the generate function.
+
+```python
+from config import get_config
+from generate import generate
+
+output = generate(config)
+print(output[:600])
+```
+
+```
+babe feet wear hell coming hold head Of ocean sorry play Santa somewhere Show hands kids Get Without Mr green longer pass alive comin won d again hundred against learned mad past minute against walked floor played alive y believe second wasn hair wish ago bring break His goes beat used cool until Black cause doin Before funny Its dance took men fast pretty keep The down So by Him what arms strong me cheese my gentle or hard Speaking blurred now window or down . Mix now real me thinking talking unafraid my dies " window As jammed old hurts on it weep into take turns all dusk in hear on My Alway
+```
+
+## Training
+
+To train for additional epochs, simply pass the config to the training function as follows.
+
+```
+from config import get_config
+from train import train_model
+
+train_model(config)
+```
+
+After each epoch, the state will automatically be saved to the current dictionary. To load in an existing state,
+specify the the 'model_filename' path in config.py.
+
 ## Potential Improvements
 
 The model outputs are quite nonsensical and improvements can be made in many areas. Firstly, the model was only trained
@@ -32,6 +62,11 @@ resulted in about ~450,000 song lyrics (~500 MB). Including all of the pop songs
 help improve results.
 
 ## Requirements
+
+pandas==1.5.2
+tokenizers==0.15.0
+torch==2.1.0
+tqdm==4.64.0
 
 ## References
 
