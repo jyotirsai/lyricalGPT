@@ -43,7 +43,7 @@ babe feet wear hell coming hold head Of ocean sorry play Santa somewhere Show ha
 
 To train for additional epochs, simply pass the config to the training function as follows.
 
-```
+```python
 from config import get_config
 from train import train_model
 
