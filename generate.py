@@ -14,7 +14,7 @@ def generate(config, max_new_tokens: int = 500):
   model = GPTModel(tokenizer.get_vocab_size(), config['embed_size'], config['n_heads'], config['context_size'], config['embed_size']*4, config['n_layers'], config['dropout'])
   model.to(device)
 
-  state = torch.load('./'+config['model_filename'])
+  state = torch.load('./'+config['model_filename'], map_location=device)
   model.load_state_dict(state['model_state_dict'])
 
   model.eval()
