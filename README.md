@@ -23,6 +23,8 @@ of the model as well as some training info.
 | Heads          | 6     |
 | Context size   | 64    |
 
+A BPE tokenizer from the HuggingFace tokenizers library was also used to tokenize the initial text.
+
 ## Inference
 
 To generate lyrics, simply pass the config dictionary to the generate function.

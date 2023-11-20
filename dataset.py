@@ -5,8 +5,8 @@ import random
 from pathlib import Path
 
 from tokenizers import Tokenizer
-from tokenizers.trainers import WordLevelTrainer
-from tokenizers.models import WordLevel
+from tokenizers.trainers import WordLevelTrainer, BpeTrainer
+from tokenizers.models import WordLevel, BPE
 from tokenizers.pre_tokenizers import Whitespace
 
 class LyricsDataset(Dataset):
@@ -38,13 +38,13 @@ def prepare_data(file_path):
 def retrieve_lyric(data):
     for i in range(len(data)):
         yield data[i]
-        
+
 def build_tokenizer(config, raw_data):
     tokenizer_path = Path(config["tokenizer_file"])
     if not Path.exists(tokenizer_path):
-        tokenizer = Tokenizer(WordLevel(unk_token="<UNK>"))
+        tokenizer = Tokenizer(BPE(unk_token=""))
         tokenizer.pre_tokenizer = Whitespace()
-        trainer = WordLevelTrainer(special_tokens=["<UNK>", "<PAD>", "<SOS>", "<EOS>"])
+        trainer = BpeTrainer(special_tokens=["", "", "", ""])
         tokenizer.train_from_iterator(
             retrieve_lyric(raw_data), trainer=trainer
         )
