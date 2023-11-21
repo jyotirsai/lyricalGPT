@@ -5,7 +5,7 @@ consists of decoder-only blocks stacked on top of one another, inspired by the T
 outlined in the paper "Attention Is All You Need" by Vaswani et. al.
 
 The model was built from scratch in PyTorch including an implementation of Multi-Headed
-Self-Attention. It was also trained for 20 epochs on a T4 GPU via Google Colab.
+Self-Attention. It was built for educational purposes and trained for 20 epochs on a T4 GPU via Google Colab. I would like to train for more epochs as well as add a learning rate scheduler in the future.
 
 ## Model
 
