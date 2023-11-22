@@ -2,7 +2,7 @@
 
 A GPT-based language model trained on an English pop songs dataset to generate new song lyrics. The model
 consists of decoder-only blocks stacked on top of one another, inspired by the Transformer network
-outlined in the paper "Attention Is All You Need" by Vaswani et. al.
+outlined in the paper "Attention Is All You Need" by Vaswani et. al. The decoder block is simplified to help reduce computation for training.
 
 The model was built from scratch in PyTorch including an implementation of Multi-Headed
 Self-Attention. It was built for educational purposes and trained for 20 epochs on a T4 GPU via Google Colab. I would like to train for more epochs as well as add a learning rate scheduler in the future.
