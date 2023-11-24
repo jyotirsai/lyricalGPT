@@ -63,6 +63,11 @@ the results signficantly. The dataset is a 5 GB English song lyrics dataset from
 resulted in about ~450,000 song lyrics (~500 MB). Including all of the pop songs, and testing out other genres, could also
 help improve results.
 
+## Future Work
+
+The model performs quite poorly so I'm going to explore fine-tuning LLMs
+which I believe should dramatically improve results.
+
 ## Requirements
 
 <ul>
